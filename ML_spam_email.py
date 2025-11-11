@@ -35,6 +35,14 @@ model_AI_NB = MultinomialNB()
 model_AI_NB.fit(x_train,y_train)
 
 y_pred = model_AI_NB.predict(x_test)
+import joblib
+
+# حفظ الموديل والمتجه (vectorizer)
+joblib.dump(model_AI_NB, "model.pkl")
+joblib.dump(vectorizer, "vectorizer.pkl")
+print("✅ Model and vectorizer saved successfully!")
+
+
 # print("Accuracy:", accuracy_score(y_test, y_pred))
 # print("Confusion Matrix:\n", confusion_matrix(y_test, y_pred))
 # print("Classification Report:\n", classification_report(y_test, y_pred))
