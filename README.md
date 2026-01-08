@@ -1,49 +1,72 @@
-# 📧 AI Spam Email Classifier
 
-A Machine Learning application built with **Python** and **Streamlit** to detect Spam emails using Natural Language Processing (NLP) techniques.
+# 📧 Spam Email Detection System
 
-## 🧠 Model Overview
-The project uses the **Multinomial Naive Bayes** algorithm, which is highly effective for text classification.
-- **Vectorization:** TF-IDF (Term Frequency-Inverse Document Frequency) is used to convert text data into numerical vectors.
-- **Accuracy:** The model provides a real-time accuracy score and classification report based on the testing dataset.
+An advanced Machine Learning application built with **Python** and **Streamlit** to detect spam emails using Natural Language Processing (NLP) techniques.
 
-## 🚀 Features
-- **Interactive Interface:** Built with Streamlit for a smooth user experience.
-- **Real-time Prediction:** Enter any text to check if it's "Spam" or "Ham" (Safe).
-- **Data Visualization:** Displays Confusion Matrix heatmap and dataset distribution graphs using Seaborn & Matplotlib.
-- **Easy Launch:** Includes a `.bat` file for one-click execution on Windows.
+---
 
-## 🛠️ Technologies Used
-- **Python** (Core Language)
-- **Scikit-Learn** (Model Building & Evaluation)
-- **Pandas & NumPy** (Data Manipulation)
-- **Streamlit** (Web GUI)
-- **Matplotlib & Seaborn** (Visualization)
+## 🚀 Overview
+
+Spam emails pose a significant cybersecurity challenge. This project leverages the **Multinomial Naive Bayes** algorithm combined with **TF-IDF Vectorization** to classify emails as:
+
+- **Spam**
+- **Ham (Safe)**
+
+The model achieves high accuracy through training on a large dataset of labeled messages.
+
+---
+
+## ✨ Features
+
+- **Real-time Classification** – Instant results for any email text
+- **Visual Analytics** – Confusion Matrix and Dataset Distribution charts
+- **High Performance** – Optimized with Streamlit caching
+- **User-Friendly Interface** – Clean, interactive web GUI
+- **Easy Execution** – Windows `.bat` launcher included
+
+---
+
+## 🧪 Examples
+
+**Spam (Phishing):**
+> Dear Valued Customer, We've detected unusual activity on your Amazon account...
+
+**Ham (Safe):**
+> Hi Team, Just a reminder about our weekly project sync on Monday...
+
+---
+
+## 🛠️ Tech Stack
+
+- Python 3.x
+- Scikit-Learn, Pandas, NumPy
+- Streamlit
+- Matplotlib & Seaborn
+
+---
 
 ## 📂 Project Structure
-- `ML_spam_email.py`: The main application script.
-- `preprocessed_data.csv`: The cleaned dataset used for training.
-- `run_spam_app.bat`: Batch script to run the app instantly on Windows.
 
-## 💻 How to Run
+```
+├── ML_spam_email.py
+├── preprocessed_data.csv
+├── requirements.txt
+└── run_spam_app.bat
+```
 
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/NoumanDev/Spam-Email-Classifier.git](https://github.com/NoumanDev/Spam-Email-Classifier.git)
-Install dependencies:
+---
 
-Bash
+## 💻 Quick Start
 
+```bash
+git clone https://github.com/Mohamed-3M-Nouman/Spam-Email-Classifier.git
+cd Spam-Email-Classifier
 pip install -r requirements.txt
-Run the application:
-
-Method 1 (Command Line):
-
-Bash
-
 streamlit run ML_spam_email.py
-Method 2 (Windows): Double-click the run_spam_app.bat file.
+```
 
-👨‍💻 Author
-Mohamed Nouman - AI & CS Student at Assiut University."# Spam-Email-Classifier" 
-"# Spam-Email-Classifier" 
+---
+    
+## 👨‍💻 Author
+
+**Mohamed Nouman** – AI & Computer Science Student, Assiut University
