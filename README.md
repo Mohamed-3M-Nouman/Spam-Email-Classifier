@@ -25,7 +25,30 @@ The model achieves high accuracy through training on a large dataset of labeled 
 - **Easy Execution** – Windows `.bat` launcher included
 
 ---
+## 📊 Model Performance & Results
 
+The model achieved an impressive accuracy of **98.48%** on the test dataset. Below are the detailed metrics and visualizations.
+
+### ✅ Key Metrics
+- **Model Accuracy:** `98.48%` 🚀
+- **Algorithm:** Multinomial Naive Bayes (Optimized with TF-IDF)
+
+### 🧾 Classification Report
+| Class       | Precision | Recall | F1-Score |
+|-------------|:---------:|:------:|:--------:|
+| **Ham** | 0.99      | 0.99   | 0.99     |
+| **Spam** | 0.97      | 0.95   | 0.96     |
+| **Overall** |           |        | **0.98** |
+
+### 📈 Visualizations
+
+| 📊 Confusion Matrix | 📉 Dataset Distribution |
+|---------------------|-------------------------|
+| ![Confusion Matrix](confusion_matrix.png) | ![Distribution](distribution.png) |
+| *Shows the correct vs incorrect predictions* | *Shows the balance between Ham and Spam emails* |
+
+
+---
 ## 🧪 Examples
 
 **Spam (Phishing):**

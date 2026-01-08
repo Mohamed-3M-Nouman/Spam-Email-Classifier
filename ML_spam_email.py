@@ -8,34 +8,34 @@ from sklearn.naive_bayes import MultinomialNB
 import streamlit as st
 import matplotlib.pyplot as plt
 import seaborn as sns
-warnings.filterwarnings("ignore", category=UserWarning)
-
-df = pd.read_csv(R"preprocessed_data.csv")
-# print(df.head())
-
-df.rename(columns={'Category': 'target', 'Message': 'email'}, inplace=True)
-# print(df.head())
-df["email"] = df["email"].str.lower()
-
-# df["target"]=df["target"].map({"ham":0, "spam":1})
-
-x = df.drop("target",axis=1)
-y = df["target"]
-
-x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.1,random_state=42)
-
-vectorizer = TfidfVectorizer()
-x_train = vectorizer.fit_transform(x_train.iloc[:,0])
-x_test = vectorizer.transform(x_test.iloc[:,0])
-
-x_train = pd.DataFrame(x_train.toarray(),columns=vectorizer.get_feature_names_out())
-x_test = pd.DataFrame(x_test.toarray(),columns=vectorizer.get_feature_names_out())
-
-model_AI_NB = MultinomialNB()
-model_AI_NB.fit(x_train,y_train)
-
-y_pred = model_AI_NB.predict(x_test)
 import joblib
+
+st.set_page_config(page_title="Spam Email Classifier", layout="centered")
+warnings.filterwarnings("ignore", category=UserWarning)
+@st.cache_resource
+def train_model():
+    df = pd.read_csv(R"preprocessed_data.csv")
+    df.rename(columns={'Category': 'target', 'Message': 'email'}, inplace=True)
+    df["email"] = df["email"].str.lower()
+    
+    x = df["email"]
+    y = df["target"]
+
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.1, random_state=42)
+
+    vectorizer = TfidfVectorizer()
+    x_train_vec = vectorizer.fit_transform(x_train)
+    x_test_vec = vectorizer.transform(x_test)
+
+    model = MultinomialNB()
+    model.fit(x_train_vec, y_train)
+    
+    return model, vectorizer, x_test_vec, y_test, df
+
+model_AI_NB, vectorizer, x_test_vec, y_test, df = train_model()
+y_pred = model_AI_NB.predict(x_test_vec)
+
+y_pred = model_AI_NB.predict(x_test_vec)
 
 # حفظ الموديل والمتجه (vectorizer)
 joblib.dump(model_AI_NB, "model.pkl")
@@ -58,7 +58,7 @@ def test_by_user():
 
 ########GUI_by_streamlit##################
 def predict_message():
-    st.set_page_config(page_title="Spam Email Classifier", layout="centered")
+    # st.set_page_config(page_title="Spam Email Classifier", layout="centered")
     st.title("📩 Spam Email Classifier")
     st.write("Paste your email message below and classify it:")
 
