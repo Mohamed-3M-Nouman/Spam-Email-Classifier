@@ -46,3 +46,4 @@ Method 2 (Windows): Double-click the run_spam_app.bat file.
 
 👨‍💻 Author
 Mohamed Nouman - AI & CS Student at Assiut University."# Spam-Email-Classifier" 
+"# Spam-Email-Classifier" 
