@@ -1,7 +1,9 @@
 
 # 📧 Spam Email Detection System
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://spam-email-classifier-ml-3m-no3man.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://spam-email-classifier-ml-3m-no3man.streamlit.app/)   
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-View_Post-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/posts/eng3mno3man_machinelearning-datascience-python-activity-7329836993712951296-cdoe?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEgRbeQBb5i5jTaXrI-TI9EszXce1gH8YZE)
 
 An advanced Machine Learning application built with **Python** and **Streamlit** to detect spam emails using Natural Language Processing (NLP) techniques.
 
